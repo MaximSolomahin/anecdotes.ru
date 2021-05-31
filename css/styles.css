@@ -22,10 +22,11 @@
 
 
 textarea.form-control{
-	width: 100%;
+	width: 50%;
 	padding: 5px 10px;
 	min-height: 200px;
 	resize: vertical;
 	text-align: justify;
 	
 }
+
