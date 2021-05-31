@@ -30,3 +30,11 @@ textarea.form-control{
 	
 }
 
+input.form-control{
+	width: 50%;
+	padding: 5px 10px;
+	
+	resize: vertical;
+	text-align: justify;
+	
+}
