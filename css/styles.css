@@ -19,21 +19,22 @@
 .name{
 	font-size: 12pt;
 }
+form{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+info alert alert-info{
+	width: 500px;
 
-
-textarea.form-control{
-	width: 50%;
-	padding: 5px 10px;
-	min-height: 200px;
-	resize: vertical;
-	text-align: justify;
-	
+	margin-right: auto;
+	margin-left: auto;
 }
 
-input.form-control{
-	width: 50%;
+textarea.form-control{
+	width: 100%;
 	padding: 5px 10px;
-	
+	min-height: 200px;
 	resize: vertical;
 	text-align: justify;
 	
