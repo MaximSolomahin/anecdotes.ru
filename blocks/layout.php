@@ -18,6 +18,7 @@
 <?php
 
     // Include pagination
+    $status = '1';
     include_once 'pagination.php';
 
         foreach ($data as  $value) {
@@ -36,9 +37,6 @@
 		</div>	
 <?php
 		}
-        // Include pagination
-        include_once 'pagination.php';
-
             if ($_SESSION['auth']){
         ?>
             <div class="info alert alert-info">

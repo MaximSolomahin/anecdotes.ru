@@ -1,6 +1,4 @@
-<?php
-include_once '../blocks/header.php';
-?>
+
 <body>
 <div id="wrapper">
     <h1 calss="<?=$_SESSION['massage']['status']?>"><?=$_SESSION['massage']['text']?> </h1>
@@ -8,39 +6,51 @@ include_once '../blocks/header.php';
         <nav>
             <ul class="pagination">
                 <?php
-                foreach ($links as $key => $link ){
-                    echo "<li><a href='$link'>$key</a></li>";
+                foreach ($links as $key => $elem ){
+                    echo "<li><a href='$elem'>$key</a></li>";
                 }
                 ?>
             </ul>
         </nav>
     </div>
-    <div class="note">
-        <p>
-            <span class="date">18.04.2014 23:59:59</span>
-            <span class="name">Дмитрий</span>
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit.
-            Nulla efficitur elementum lorem id venenatis.
-            Nullam id sagittis urna, eu ultrices risus.
-            Duis ante lorem, semper nec fringilla eu,
-            commodo vel mauris. Nunc tristique odio lectus, eget condimentum nunc consectetur eu. Nullam non varius nisl, aliquet fringilla lectus. Aliquam erat volutpat. Ut vel mi et lectus hendrerit ornare vel ut neque. Quisque venenatis nisl eu mi
-        </p>
-    </div>
 
-</div>
-<div class="info alert alert-info">
-    Запись успешно сохранена!
-</div>
-<div id="form">
-    <form action="#form" method="POST">
-        <p><input class="form-control" placeholder="Ваше имя"></p>
-        <p><textarea class="form-control" placeholder="Ваш отзыв"></textarea></p>
-        <p><input type="submit" class="btn btn-info btn-block" value="Сохранить"></p>
-    </form>
-</div>
-</div>
+<?php
+        $status = '2';
+
+        include_once '../blocks/pagination.php';
+
+    foreach ($data as $elem){
+?>
+        <div class="data_admin">
+            <p>
+                <div class="name"><b><?=$elem['genre']?></b></div>
+                <span class="date"><?=$elem['data_created']?></span>
+                <span class="name"><b><?=$elem['name']?></b></span>
+                <span class="name"><?=$elem['text']?></span>
+                <div class="name"><a href="?access=<?=$elem['id']?>">Принять</a></div>
+                <div class="name"><a href="?deny=<?=$elem['id']?>">Отклонить</a></div>
+            </p>
+            <p>
+
+            </p>
+        </div>
+    <?php
+    }
+    if (!empty($_SESSION['massage']['text_anecdot'])){
+    ?>
+    <div class="info alert alert-info">
+        <?= $_SESSION['massage']['text_anecdot']?>
+    </div>
+<?php
+    }
+?>
+        <div id="form_admin">
+            <form action="#form" method="POST">
+                <p><input class="form-control" placeholder="Ваше имя"></p>
+                <p><textarea class="form-control" placeholder="Ваш отзыв"></textarea></p>
+                <p><input type="submit" class="btn btn-info btn-block" value="Сохранить"></p>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

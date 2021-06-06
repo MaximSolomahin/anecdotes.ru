@@ -14,7 +14,6 @@
                 $anecdote = $_POST['text'];
 
 
-
                 $result = mysqli_query($link, "SELECT genre.id, genre.name FROM genre WHERE name = '$genre'");
                 $genre_name = mysqli_fetch_assoc($result);
 
