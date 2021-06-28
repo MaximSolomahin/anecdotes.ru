@@ -1,20 +1,5 @@
-
-<body>
-<div id="wrapper">
-    <h1 calss="<?=$_SESSION['massage']['status']?>"><?=$_SESSION['massage']['text']?> </h1>
-    <div>
-        <nav>
-            <ul class="pagination">
-                <?php
-                foreach ($links as $key => $elem ){
-                    echo "<li><a href='$elem'>$key</a></li>";
-                }
-                ?>
-            </ul>
-        </nav>
-    </div>
-
 <?php
+    include_once 'links.php';
         $status = '2';
 
         include_once '../blocks/pagination.php';
