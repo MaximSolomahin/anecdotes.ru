@@ -1,10 +1,12 @@
 <?php
     session_start();
     if($_SESSION['auth'] && $_SESSION['admin'] == 'admin') {
+        $title = 'Админка';
         include_once '../functions/function.php';
         $link = connectDB();
+        //Добавить дату добавления
 
-        $links =  ['На главную' => '../index.php', 'Пользователи' => 'users.php'];
+        $links =  ['На главную' => '../index.php', 'Пользователи' => 'users.php', 'Жанры' => 'genres.php'];
 
         if (isset($_GET['access'])){
             mysqli_query($link, "UPDATE anecdotes SET status_id = '1' WHERE id = '$_GET[access]' ");
@@ -22,5 +24,7 @@
         $_GET = null;
         $_SESSION['massage']['text_anecdot'] = null;
 
+    } else {
+        header('Location: ../index.php');
     }
 
