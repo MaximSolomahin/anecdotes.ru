@@ -28,7 +28,7 @@
 				<br>
                     <div class="date"><?=$value['data_created']?></div>
 					<div class="date"><?=$value['genre']?></div>
-					<div class="name"><?=$value['login']?></div>
+					<div class="name"><?=$value['name']?></div>
 				</p>
 				<p>
 					<?=$value['text']?>
