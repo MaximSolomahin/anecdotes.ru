@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $title = 'Войти';
     include_once 'functions/function.php';
     $link = connectDB();
     $_SESSION['massage'] = ['text' => 'Введите Ваш логин и пароль', 'status' => 'main'];
