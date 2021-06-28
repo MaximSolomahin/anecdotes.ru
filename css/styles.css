@@ -52,3 +52,13 @@ note_admin{
 	border: 2px;
 	border-color: #1b6d85;
 }
+.table{
+	border: 1px;
+	border-radius: 2px;
+}
+#change{
+	width: 50%;
+	padding: 5px 10px;
+	resize: vertical;
+	text-align: justify;
+}
