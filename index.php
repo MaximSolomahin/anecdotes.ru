@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $title = 'Анекдоты';
     include_once 'functions/function.php';
     $link = connectDB();
 
@@ -28,10 +29,10 @@
                 	} else {
                 	
                     	if ($genre_name){
-                    	    var_dump($_SESSION['id']);
                         	mysqli_query($link, "INSERT INTO anecdotes SET 
-                        	author_id = '$_SESSION[id]', genre_id = '$genre_name[id]', text = '$anecdote' ");
+                        	author_id = '$_SESSION[id]', genre_id = '$genre_name[id]', status_id = '2', text = '$anecdote' ");
                         	$_SESSION['massage']['text_anecdot'] = 'Спасибо за предлженный анекдот, после проверки модератором Ваш анекдот опубликуется';
+                            header('Location: /index.php'); die();
                     	} else {
                        		 mysqli_query($link, "INSERT INTO genre SET name = '$genre' ");
 
@@ -40,12 +41,13 @@
 
 
                        		 mysqli_query($link, "INSERT INTO anecdotes SET 
-                        author_id = '$_SESSION[id]', genre_id = '$genre_id[id]', text = '$anecdote' ");
+                        author_id = '$_SESSION[id]', genre_id = '$genre_id[id]',  status_id = '2', text = '$anecdote' ");
                         	$_SESSION['massage']['text_anecdot'] = 'Спасибо за предлженный анекдот, после проверки модератором Ваш анекдот опубликуется';
+                            header('Location: /index.php'); die();
                     }
                 }
             } else {
-                $_SESSION['massage']['text_anecdot'] = 'Предлагайте свои анекдоты, помеемся вместе!';
+                $_SESSION['massage']['text_anecdot'] = 'Предлагайте свои анекдоты, посмеемся вместе!';
         }
 
 
