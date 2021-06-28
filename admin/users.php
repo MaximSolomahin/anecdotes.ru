@@ -1,8 +1,8 @@
 <?php
     session_start();
-
-    echo '<a href="admin_page.php">nen</a>';
+        include_once '../blocks/links.php';
     if($_SESSION['auth'] && $_SESSION['admin'] == 'admin') {
+        $title = 'Пользователи';
         include_once '../functions/function.php';
         $link = connectDB();
         //Start command
@@ -28,10 +28,11 @@
         users LEFT JOIN admin ON users.admin_Status = admin.id") or die(mysqli_error($link));
         for($users = []; $row = mysqli_fetch_assoc($result); $users[] = $row);
 
+            include_once '../blocks/header.php';
 
         $table = '';
         $table .= "
-            <table border='1px'>
+            <table class='table'>
                 <tr>
                     <th>id</th>
                     <th>Логин</th>
